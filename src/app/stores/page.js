@@ -6,7 +6,7 @@ const store = {
   id: 1,
   name: 'Kalika Steel And Furniture',
   address: 'Ranjangaon Road, Walunj, Pandharpur, Chatrapati Sambhajinagar Maharashtra - 431136',
-  phone: '+91 9890602225',
+  phone: '+918668232452',
   email: 'kalika@furniture.com',
   hours: '9:30 AM - 9:00 PM',
   image: 'https://i.pinimg.com/736x/56/f6/bf/56f6bfb93086524f9cf4bd031e492237.jpg', // Replace with actual image if available

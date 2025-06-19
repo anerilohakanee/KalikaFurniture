@@ -30,7 +30,7 @@ export default function FAQPage() {
           </Card>
           <Card className="p-6">
             <h3 className="text-lg font-semibold mb-2">How do I contact customer support?</h3>
-            <p className="text-gray-600">You can reach us at <a href="mailto:furniture.enquiry@kalikafurniture.com" className="text-blue-600 underline">furniture.enquiry@kalikafurniture.com</a> or call +91 9890602225 (Mon-Sat, 9:30 AM - 9:00 PM).</p>
+            <p className="text-gray-600">You can reach us at <a href="mailto:furniture.enquiry@kalikafurniture.com" className="text-blue-600 underline">furniture.enquiry@kalikafurniture.com</a> or call +918668232452 (Mon-Sat, 9:30 AM - 9:00 PM).</p>
           </Card>
           <Card className="p-6">
             <h3 className="text-lg font-semibold mb-2">Where are your stores located?</h3>

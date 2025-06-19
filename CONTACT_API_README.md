@@ -5,7 +5,7 @@ This guide explains how to set up and use the dynamic contact API system with SM
 ## Features
 
 - ✅ Dynamic contact form submission with API integration
-- ✅ SMS notifications sent directly to +91 9890602225
+- ✅ SMS notifications sent directly to +918668232452
 - ✅ Email notifications to business email
 - ✅ Dynamic store location management
 - ✅ Contact message management system
@@ -50,7 +50,7 @@ EMAIL_USER=your_gmail_address@gmail.com
 EMAIL_PASS=your_gmail_app_password_here
 
 # Target phone number for SMS notifications
-TARGET_PHONE_NUMBER=+919890602225
+TARGET_PHONE_NUMBER=+918668232452
 
 # Business email for notifications
 BUSINESS_EMAIL=mumbai@kalikafurniture.com
@@ -117,7 +117,7 @@ const response = await fetch('/api/contact/messages', {
 
 ## SMS Message Format
 
-When a contact form is submitted, an SMS is sent to +91 9890602225 with the following format:
+When a contact form is submitted, an SMS is sent to +918668232452 with the following format:
 
 ```
 New Contact Form Submission:

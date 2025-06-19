@@ -51,7 +51,7 @@ export default function RootLayout({ children }) {
                 <div>
                   <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
                   <ul className="space-y-2 text-gray-400">
-                    <li>+91 9890602225</li>
+                    <li>+918668232452</li>
                     <li>furniture.enquiry@kalikafurniture.com</li>
                     <li>Ranjangaon Road, Walunj, Pandharpur, Chatrapati Sambhajinagar Maharashtra - 431136</li>
                   </ul>

@@ -111,7 +111,7 @@ export default function ShippingPage() {
                 </p>
                 <div className="space-y-2">
                   <p className="text-sm text-gray-600">
-                    <strong>Phone:</strong> +91 9890602225
+                    <strong>Phone:</strong> +918668232452
                   </p>
                   <p className="text-sm text-gray-600">
                     <strong>Email:</strong> furniture.enquiry@kalikafurniture.com

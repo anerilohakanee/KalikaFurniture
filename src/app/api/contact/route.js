@@ -48,7 +48,7 @@ export async function POST(request) {
         await twilioClient.messages.create({
           body: `New Contact Form Submission:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\nSubject: ${subject}\nMessage: ${message}`,
           from: process.env.TWILIO_PHONE_NUMBER,
-          to: '+919890602225', // Your target phone number
+          to: '+918668232452', // Your target phone number
         });
         smsSent = true;
       } else {

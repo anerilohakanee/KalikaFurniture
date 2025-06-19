@@ -304,9 +304,8 @@ export default function CategoryPage() {
         {/* Products Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredAndSortedProducts.map((product) => (
-            <Link 
+            <div 
               key={product.id}
-              href={`/products/${product.id}`}
               className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <div className="relative h-64">
@@ -337,7 +336,7 @@ export default function CategoryPage() {
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
