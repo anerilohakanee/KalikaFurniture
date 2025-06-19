@@ -212,9 +212,9 @@ export default function CheckoutPage() {
 
   return (
     <PageLayout>
-      <div className="max-w-6xl mx-auto py-8">
+      <div className="max-w-6xl mx-auto py-8 px-2 sm:px-4">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4 sm:gap-0">
           <div className="flex items-center gap-4">
             <Button
               variant="ghost"
@@ -223,11 +223,12 @@ export default function CheckoutPage() {
             >
               Back
             </Button>
-            <h1 className="text-3xl font-bold">Checkout</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold">Checkout</h1>
           </div>
           <Button
             variant="secondary"
             onClick={() => router.push('/products')}
+            className="w-full sm:w-auto"
           >
             Continue Shopping
           </Button>
@@ -250,10 +251,10 @@ export default function CheckoutPage() {
                     <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-black font-semibold">
                       1
                     </div>
-                    <h2 className="text-xl font-semibold">Shipping Information</h2>
+                    <h2 className="text-lg sm:text-xl font-semibold">Shipping Information</h2>
                   </div>
 
-                  <Card className="p-6">
+                  <Card className="p-4 sm:p-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -372,14 +373,14 @@ export default function CheckoutPage() {
                     <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-black font-semibold">
                       2
                     </div>
-                    <h2 className="text-xl font-semibold">Payment Information</h2>
+                    <h2 className="text-lg sm:text-xl font-semibold">Payment Information</h2>
                   </div>
 
-                  <Card className="p-6">
+                  <Card className="p-4 sm:p-6">
                     <div className="space-y-6">
                       {/* Payment Method Selection */}
                       <div>
-                        <h3 className="text-lg font-medium mb-4">Select Payment Method</h3>
+                        <h3 className="text-base sm:text-lg font-medium mb-4">Select Payment Method</h3>
                         <div className="space-y-3">
                           <label className="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50">
                             <input
@@ -521,14 +522,14 @@ export default function CheckoutPage() {
                     <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-black font-semibold">
                       3
                     </div>
-                    <h2 className="text-xl font-semibold">Order Review</h2>
+                    <h2 className="text-lg sm:text-xl font-semibold">Order Review</h2>
                   </div>
 
-                  <Card className="p-6">
+                  <Card className="p-4 sm:p-6">
                     <div className="space-y-6">
                       {/* Shipping Information Review */}
                       <div>
-                        <h3 className="text-lg font-medium mb-4">Shipping Information</h3>
+                        <h3 className="text-base sm:text-lg font-medium mb-4">Shipping Information</h3>
                         <div className="bg-gray-50 rounded-lg p-4">
                           <p className="font-medium">{shippingInfo.firstName} {shippingInfo.lastName}</p>
                           <p className="text-gray-600">{shippingInfo.email}</p>
@@ -540,7 +541,7 @@ export default function CheckoutPage() {
 
                       {/* Payment Method Review */}
                       <div>
-                        <h3 className="text-lg font-medium mb-4">Payment Method</h3>
+                        <h3 className="text-base sm:text-lg font-medium mb-4">Payment Method</h3>
                         <div className="bg-gray-50 rounded-lg p-4">
                           <p className="font-medium">
                             {paymentInfo.paymentMethod === 'cod' && 'Cash on Delivery'}
@@ -556,16 +557,17 @@ export default function CheckoutPage() {
             </AnimatePresence>
 
             {/* Navigation Buttons */}
-            <div className="flex justify-between">
+            <div className="flex flex-col sm:flex-row justify-between gap-3 sm:gap-0">
               {currentStep > 1 && (
                 <Button
                   variant="secondary"
                   onClick={handlePreviousStep}
+                  className="w-full sm:w-auto"
                 >
                   Previous
                 </Button>
               )}
-              <div className="ml-auto">
+              <div className="ml-auto w-full sm:w-auto">
                 {currentStep < 3 ? (
                   <Button
                     variant="primary"
@@ -574,6 +576,7 @@ export default function CheckoutPage() {
                       (currentStep === 1 && !validateShippingInfo()) ||
                       (currentStep === 2 && !validatePaymentInfo())
                     }
+                    className="w-full sm:w-auto"
                   >
                     Next
                   </Button>
@@ -582,7 +585,7 @@ export default function CheckoutPage() {
                     variant="primary"
                     onClick={handlePlaceOrder}
                     isLoading={isProcessing}
-                    className="w-32"
+                    className="w-full sm:w-32"
                   >
                     Place Order
                   </Button>
@@ -592,11 +595,10 @@ export default function CheckoutPage() {
           </div>
 
           {/* Sidebar - Order Summary */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 mt-8 lg:mt-0">
             <div className="sticky top-8">
-              <Card className="p-6">
-                <h3 className="text-lg font-semibold mb-4">Order Summary</h3>
-                
+              <Card className="p-4 sm:p-6">
+                <h3 className="text-base sm:text-lg font-semibold mb-4">Order Summary</h3>
                 {/* Items */}
                 <div className="space-y-4 mb-6">
                   {cart.map((item) => (
@@ -610,9 +612,9 @@ export default function CheckoutPage() {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h4 className="font-medium text-sm truncate">{item.name}</h4>
-                        <p className="text-gray-600 text-sm">Qty: {item.quantity}</p>
-                        <p className="font-semibold text-sm">₹{(item.price * item.quantity).toLocaleString()}</p>
+                        <h4 className="font-medium text-xs sm:text-sm truncate">{item.name}</h4>
+                        <p className="text-gray-600 text-xs sm:text-sm">Qty: {item.quantity}</p>
+                        <p className="font-semibold text-xs sm:text-sm">₹{(item.price * item.quantity).toLocaleString()}</p>
                       </div>
                     </div>
                   ))}
@@ -620,10 +622,10 @@ export default function CheckoutPage() {
 
                 {/* Delivery Options */}
                 <div className="border-t pt-4 mb-4">
-                  <h4 className="font-medium mb-3">Delivery Option</h4>
+                  <h4 className="font-medium mb-3 text-sm sm:text-base">Delivery Option</h4>
                   <div className="space-y-2">
                     {deliveryOptions.map((option) => (
-                      <label key={option.id} className="flex items-center gap-3 cursor-pointer">
+                      <label key={option.id} className="flex items-center gap-3 cursor-pointer text-xs sm:text-sm">
                         <input
                           type="radio"
                           name="delivery"
@@ -639,7 +641,7 @@ export default function CheckoutPage() {
                               {option.price === 0 ? 'Free' : `₹${option.price}`}
                             </span>
                           </div>
-                          <p className="text-sm text-gray-600">{option.duration}</p>
+                          <p className="text-xs sm:text-sm text-gray-600">{option.duration}</p>
                         </div>
                       </label>
                     ))}
@@ -648,25 +650,25 @@ export default function CheckoutPage() {
 
                 {/* Totals */}
                 <div className="border-t pt-4 space-y-2">
-                  <div className="flex justify-between">
+                  <div className="flex justify-between text-xs sm:text-base">
                     <span>Subtotal ({itemCount} items)</span>
                     <span>₹{total.toLocaleString()}</span>
                   </div>
-                  <div className="flex justify-between">
+                  <div className="flex justify-between text-xs sm:text-base">
                     <span>Delivery</span>
                     <span>{selectedDelivery.price === 0 ? 'Free' : `₹${selectedDelivery.price}`}</span>
                   </div>
-                  <div className="border-t pt-2 flex justify-between font-semibold text-lg">
+                  <div className="border-t pt-2 flex justify-between font-semibold text-base sm:text-lg">
                     <span>Total</span>
                     <span>₹{finalTotal.toLocaleString()}</span>
                   </div>
                 </div>
 
                 {/* Security Badge */}
-                <div className="mt-6 p-4 bg-green-50 rounded-lg">
+                <div className="mt-6 p-3 sm:p-4 bg-green-50 rounded-lg">
                   <div className="flex items-center gap-2 text-green-700">
                     <FiLock className="w-4 h-4" />
-                    <span className="text-sm font-medium">Secure Checkout</span>
+                    <span className="text-xs sm:text-sm font-medium">Secure Checkout</span>
                   </div>
                   <p className="text-xs text-green-600 mt-1">
                     Your payment information is encrypted and secure
